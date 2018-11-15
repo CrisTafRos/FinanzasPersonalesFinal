@@ -12,11 +12,11 @@ class CuentaController: NSObject {
     
     static var cuentasLista: [Float] = []
     
-    func agregarCuenta(nueva: Float){
+    class func agregarCuenta(nueva: Float){
         CuentaController.cuentasLista.append(nueva)
     }
     
-    func eliminarCuenta(atIndex: Int){
+    class func eliminarCuenta(atIndex: Int){
         CuentaController.cuentasLista.remove(at: atIndex)
     }
 }

@@ -50,6 +50,9 @@
                                                 <state key="normal" title="Ahorro">
                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="5dK-Sp-01g" kind="show" id="0fJ-8L-HrE"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -112,6 +115,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Finanzas Personales" id="jFz-yC-YTa">
                         <barButtonItem key="backBarButtonItem" title="Inicio" id="zQU-I8-bY4"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="gCW-VC-WRq">
+                            <connections>
+                                <segue destination="54g-Lw-fWY" kind="show" id="Fzs-74-krd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="botonAhorro" destination="iRL-Qb-CGH" id="5hh-jX-UXp"/>
@@ -125,6 +133,22 @@
             </objects>
             <point key="canvasLocation" x="1031.25" y="29.577464788732396"/>
         </scene>
+        <!--Estadística-->
+        <scene sceneID="sSC-QW-azM">
+            <objects>
+                <viewController id="54g-Lw-fWY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6ik-50-uN5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="TMj-JF-hLJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Estadística" id="s7h-PE-LuS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V6g-vP-lyy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1763" y="-751"/>
+        </scene>
         <!--Presupuesto-->
         <scene sceneID="bfT-cA-CzI">
             <objects>
@@ -133,16 +157,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bla-sC-Paz">
-                                <rect key="frame" x="40" y="92" width="240" height="335"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bla-sC-Paz">
+                                <rect key="frame" x="20" y="84" width="280" height="384"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="celda" id="Rcp-Tg-7Q2">
-                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="280" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rcp-Tg-7Q2" id="Pcs-sb-aOr">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -152,17 +175,12 @@
                                     <outlet property="delegate" destination="sJq-69-qxM" id="ZVi-7H-edc"/>
                                 </connections>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Yhx-ga-pqG">
-                                <rect key="frame" x="18" y="485" width="285" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Yhx-ga-pqG">
+                                <rect key="frame" x="20" y="488" width="280" height="60"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjK-PU-o6s">
-                                        <rect key="frame" x="0.0" y="0.0" width="135" height="54"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjK-PU-o6s">
+                                        <rect key="frame" x="0.0" y="0.0" width="134" height="60"/>
                                         <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="135" id="9S2-tX-N3e"/>
-                                            <constraint firstAttribute="height" constant="54" id="Lkn-2R-g4a"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Ingresos">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -171,22 +189,30 @@
                                             <segue destination="DNo-57-dyE" kind="show" id="19D-4N-s8Y"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6D-Fb-ClI">
-                                        <rect key="frame" x="150" y="0.0" width="135" height="54"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6D-Fb-ClI">
+                                        <rect key="frame" x="146" y="0.0" width="134" height="60"/>
                                         <color key="backgroundColor" red="1" green="0.57177022129619282" blue="0.16790814946467292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="135" id="OWq-jF-PUk"/>
-                                            <constraint firstAttribute="height" constant="54" id="ucg-ne-0uZ"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Egresos">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="XTT-pb-0GE"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RIn-j9-HS2" firstAttribute="bottom" secondItem="Yhx-ga-pqG" secondAttribute="bottom" constant="20" id="6Ok-3T-EIn"/>
+                            <constraint firstItem="Yhx-ga-pqG" firstAttribute="top" secondItem="bla-sC-Paz" secondAttribute="bottom" constant="20" id="6Uy-l7-dUv"/>
+                            <constraint firstItem="RIn-j9-HS2" firstAttribute="trailing" secondItem="bla-sC-Paz" secondAttribute="trailing" constant="20" id="7lk-mg-RUN"/>
+                            <constraint firstItem="Yhx-ga-pqG" firstAttribute="leading" secondItem="RIn-j9-HS2" secondAttribute="leading" constant="20" id="Zuj-eS-GCL"/>
+                            <constraint firstItem="RIn-j9-HS2" firstAttribute="trailing" secondItem="Yhx-ga-pqG" secondAttribute="trailing" constant="20" id="eq5-05-JRe"/>
+                            <constraint firstItem="bla-sC-Paz" firstAttribute="leading" secondItem="RIn-j9-HS2" secondAttribute="leading" constant="20" id="kbK-WB-vgb"/>
+                            <constraint firstItem="bla-sC-Paz" firstAttribute="top" secondItem="RIn-j9-HS2" secondAttribute="top" constant="20" id="rSL-op-IN3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RIn-j9-HS2"/>
                     </view>
                     <navigationItem key="navigationItem" title="Presupuesto" id="tGd-kE-LOk"/>
@@ -196,7 +222,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="URj-RC-PuK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1762.5" y="29.577464788732396"/>
+            <point key="canvasLocation" x="1763" y="30"/>
+        </scene>
+        <!--Ahorro-->
+        <scene sceneID="s67-Wu-wMa">
+            <objects>
+                <viewController id="5dK-Sp-01g" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k7M-mm-GRu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="dJE-ds-KyG"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Ahorro" id="6gK-x0-fJw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dbN-8v-6an" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1763" y="830"/>
         </scene>
         <!--Cuentas View Controller-->
         <scene sceneID="UiS-Ii-1gL">
@@ -211,7 +253,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
                                     <action selector="guardarCuenta:" destination="DNo-57-dyE" eventType="editingDidEnd" id="WA0-OF-bn0"/>
                                 </connections>
@@ -231,7 +273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hz-CZ-bMV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2542.5" y="29.577464788732396"/>
+            <point key="canvasLocation" x="2514" y="30"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="glC-Kj-3fH">

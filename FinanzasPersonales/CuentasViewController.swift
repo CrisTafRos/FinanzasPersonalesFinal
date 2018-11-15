@@ -13,7 +13,8 @@ class CuentasViewController: UIViewController {
     @IBOutlet weak var cuentaTextField: UITextField!
 
     @IBAction func guardarCuenta(_ sender: UITextField) {
-        
+        CuentaController.agregarCuenta(nueva: Float(cuentaTextField.text!)!)
+        dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -23,7 +24,5 @@ class CuentasViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    
 
 }

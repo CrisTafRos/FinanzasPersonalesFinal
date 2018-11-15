@@ -38,5 +38,11 @@ class PresupuestoViewController: UIViewController, UITableViewDelegate, UITableV
         celda.textLabel?.text = String(CuentaController.cuentasLista[indexPath.row])
         return celda
     }
-
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            CuentaController.eliminarCuenta(atIndex: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }
